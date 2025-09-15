@@ -1,0 +1,23 @@
+{
+  "name": "node-starter",
+  "version": "1.0.0",
+  "description": "learning sql",
+  "homepage": "https://github.com/0xYurii/node-starter#readme",
+  "bugs": {
+    "url": "https://github.com/0xYurii/node-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xYurii/node-starter.git"
+  },
+  "license": "ISC",
+  "author": "Yuri Bee",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "module"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.2.17"
+  }
+}

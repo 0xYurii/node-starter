@@ -1,7 +1,5 @@
 /*
-	Select the brand, model, condition and price from cars
-		where the condition equals 0
+	Select cars made between 1980 and 1989
+		show the brand, model, year and price
 */
 
-SELECT brand, model, condition, price FROM cars
-	WHERE condition=0;

@@ -1,9 +1,11 @@
 /*
-	Search for brand, model, color, year and price of cars
-		where the color is a shade of red
-		or the year is between 1960 and 1969
+	Select brand, model, price and sold from cars
+		filter out any cars which are sold
+		show cars where the brand is none of ('Ford', 'Triumph', 'Chevrolet', 'Dodge')
+		or the price is less than $50000
 */
-SELECT brand, model, color, year, price, sold FROM cars
-	WHERE (color LIKE '%red%'
-	OR year BETWEEN 1960 AND 1969)
-	AND sold='false';
+
+SELECT brand, model, price, sold FROM cars
+	WHERE sold IS FALSE
+	AND (brand NOT IN ('Ford', 'Triumph', 'Chevrolet', 'Dodge')
+	OR price <= 50000);

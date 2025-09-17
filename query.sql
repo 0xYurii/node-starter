@@ -1,10 +1,15 @@
 /*
-	Select the average, minimum and maximum price from cars
-		where sold is true
-	Round the average up to the nearest whole number
-		and use 'avg' as the alias for that result	
+	Select:
+		* the brand
+		* a count of the brand
+		* and an average of the price for each brand
+		* round the average down to the nearest number
+		* alias the average as 'AVG' in your output
+	From cars where
+		the car has not been sold
+	Group the table by brand.
 */
 
-
-SELECT FLOOR (AVG(price)) AS avertage_price, MIN(price) AS min_price, MAX(price) AS max_price FROM cars
-	WHERE sold is TRUE;
+SELECT brand, COUNT(brand), FLOOR(AVG(price)) AS AVG FROM cars
+	WHERE sold IS FALSE
+	GROUP BY brand;

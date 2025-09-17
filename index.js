@@ -64,9 +64,6 @@ import fs from 'fs';
   // Load the SQL file
   const query = fs.readFileSync('query.sql', 'utf8');
 
-  // For section 4 - execute the CRUD operation
-  await db.exec(query)
-
   // Insert example
   await db.exec(`
   INSERT INTO cars (
@@ -77,8 +74,23 @@ import fs from 'fs';
 	'Aston Martin', 'V8 Vantage', 1977, 145000, 'dark green', 5, FALSE
 );`)
 
+  // Insert challenge
+  await db.exec(`
+  INSERT INTO cars (
+	brand, model, year, price, color, condition, sold
+) VALUES (
+	'Chevrolet', 'Bel Air', 1955, 50000, 'purple', 5, FALSE
+), (
+	'Porsche', '944 Turbo', 1986, 48000, 'white', 4, FALSE
+);
+`)
+
+
+  // For section 4 - execute the CRUD operation
+  await db.exec(query)
+
   // Display data from the table 
-  const response = await db.query(`SELECT brand, model, year, price FROM cars;`)
+  const response = await db.query(`SELECT id, brand, model, condition, price, sold FROM cars ORDER BY id;`)
 
   console.clear();
   console.table(response.rows);

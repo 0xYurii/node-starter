@@ -1,12 +1,11 @@
 /*
-		2. Brand: , model: , year: 1986,
-			retail_price: 48000, color: , condition: 4, sold: false
+	Set the condition to 1
+		and the price to $10,000
+	where the car's brand is 
+		and sold is false
 */
 
-INSERT INTO cars(
-	brand, model, year, price, color, condition, sold
-)VALUES(
-	'Chevrolet', 'Bel Air', 1955, 50000, 'purple', 5, FALSE
-),(
-	'Porsche', '944 Turbo', 1986, 48000, 'white', 4, FALSE
-);
+UPDATE cars SET
+	condition = 1,
+	price = 10000
+WHERE brand = 'Porsche' AND sold IS FALSE;

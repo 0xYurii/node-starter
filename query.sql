@@ -1,11 +1,7 @@
 /*
-	Set the condition to 1
-		and the price to $10,000
-	where the car's brand is 
-		and sold is false
+	Delete any record from the cars table where sold is TRUE
 */
 
-UPDATE cars SET
-	condition = 1,
-	price = 10000
-WHERE brand = 'Porsche' AND sold IS FALSE;
+
+DELETE FROM cars
+ WHERE sold is TRUE;

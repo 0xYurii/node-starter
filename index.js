@@ -85,12 +85,25 @@ import fs from 'fs';
 );
 `)
 
+  // Update example
+  await db.exec(`
+  UPDATE cars SET
+	  sold = TRUE
+  WHERE brand = 'Ford'
+  AND model = 'Escort RS2000';`)
+
+  // Update challenge
+  await db.exec(`
+  UPDATE cars SET
+	price = 72000, condition = 5
+  WHERE brand = 'Porsche' AND model = '944 Turbo';`)
+
 
   // For section 4 - execute the CRUD operation
   await db.exec(query)
 
   // Display data from the table 
-  const response = await db.query(`SELECT id, brand, model, condition, price, sold FROM cars ORDER BY id;`)
+  const response = await db.query(`SELECT brand, model, condition, price, sold FROM cars ORDER BY id;`)
 
   console.clear();
   console.table(response.rows);

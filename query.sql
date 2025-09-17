@@ -14,4 +14,5 @@
 SELECT year, COUNT(year) AS car_count, MAX(price), MIN(price) FROM cars
 	WHERE sold IS TRUE
 	GROUP BY year
-	HAVING year > 1 ;
+	HAVING COUNT(year) > 1 
+	ORDER BY car_count;

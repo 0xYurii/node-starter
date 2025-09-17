@@ -1,1 +1,1 @@
-SELECT * FROM sold_cars;
+SELECT * FROM staff;

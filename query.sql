@@ -1,18 +1,12 @@
 /*
-	Select:
-		* year
-		* a count of cars from that year, aliased as car_count
-		* the maximum price
-		* the minimum price
-	from the table cars
-		where the car has been sold
-	group by year
-		only show years where more than one car has been sold from that year
-	order the result by car_count
+	Select color and count how many cars have each color
+		find cars which have not been sold
+		order by count in descending order
+		only show results where the count is greater than 2
 */
 
-SELECT year, COUNT(year) AS car_count, MAX(price), MIN(price) FROM cars
-	WHERE sold IS TRUE
-	GROUP BY year
-	HAVING COUNT(year) > 1 
-	ORDER BY car_count;
+SELECT color, COUNT(color) FROM cars
+	WHERE sold IS FALSE
+	GROUP BY color
+	HAVING COUNT(color) > 2
+	ORDER BY COUNT(color) DESC; 

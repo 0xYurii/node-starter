@@ -20,8 +20,7 @@ ALTER COLUMN dealership_id SET NOT NULL;
 
 -- 4. Add the foreign key constraint
 ALTER TABLE cars
-ADD CONSTRAINT dealership_fk FOREIGN KEY (dealership_id)
-REFERENCES dealerships(id);
+ADD CONSTRAINT dealership_fk FOREIGN KEY (dealership_id) REFERENCES dealerships(id);
 
 
 

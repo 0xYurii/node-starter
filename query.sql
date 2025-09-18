@@ -1,22 +1,24 @@
 /*
-	Select the city, state and
-		count the total number of cars in each dealership
-		alias the count as car_count
-	
-	Use cars as the left table, and dealerships as the right table
-		choosing a join which will show every dealership
+	Show the city and state of dealerships
+		with a count of the cars sold
+		aliased as cars_sold
 		
-	Include a condition to count unsold cars
+	Select from sold_cars
+		join with the relevant tables
+		
+	Include dealerships which have no sold cars
 	
-	Group by dealership city and state
-	Order by the car_count
+	Order the count in descending order
+		
+	Hint: you may need to join using a table not included in our columns
 */
 
-
-SELECT city, state, COUNT(C.id) AS car_count 
-	FROM cars C
-	RIGHT JOIN dealerships D ON dealership_id=D.id
-WHERE sold IS NOT TRUE
-GROUP BY city,state
-ORDER BY car_count;
-
+SELECT
+	D.city,
+	D.state,
+	COUNT(SC.id) AS cars_sold
+FROM sold_cars SC
+	LEFT JOIN cars C ON SC.cars_id = C.id
+	RIGHT JOIN dealerships D ON C.dealership_id = D.id
+GROUP BY D.city, D.state
+ORDER BY cars_sold DESC;

@@ -1,10 +1,8 @@
 /*
-	Select name, role, city, state
-		From the staff table
-	Left join with the dealerships table where the dealership_id in staff
-			matches with the id in dealerships
+	Use full join to show the name, role and sold_price
+		from staff
+	Full join with sold_cars
+		matching seller with staff.id	
 */
-
-
-SELECT name, role, city, state FROM staff
-  LEFT JOIN dealerships ON dealership_id = dealerships.id;
+SELECT name, role, sold_price FROM staff
+FULL JOIN sold_cars ON seller=staff.id;

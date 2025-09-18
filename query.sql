@@ -1,8 +1,22 @@
 /*
-	Use full join to show the name, role and sold_price
-		from staff
-	Full join with sold_cars
-		matching seller with staff.id	
+	Select the city, state and
+		count the total number of cars in each dealership
+		alias the count as car_count
+	
+	Use cars as the left table, and dealerships as the right table
+		choosing a join which will show every dealership
+		
+	Include a condition to count unsold cars
+	
+	Group by dealership city and state
+	Order by the car_count
 */
-SELECT name, role, sold_price FROM staff
-FULL JOIN sold_cars ON seller=staff.id;
+
+
+SELECT city, state, COUNT(C.id) AS car_count 
+	FROM cars C
+	RIGHT JOIN dealerships D ON dealership_id=D.id
+WHERE sold IS NOT TRUE
+GROUP BY city,state
+ORDER BY car_count;
+

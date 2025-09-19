@@ -26,9 +26,13 @@ import fs from 'fs';
   const insertNewData = fs.readFileSync('insert-new-data.sql', 'utf-8');
   await db.exec(insertNewData);
 
-  // Alter constraints dropping NOT NULL
-  const alterConstraints = fs.readFileSync('alter-constraints.sql', 'utf-8');
-  await db.exec(alterConstraints);
+  // // Firing Frankie Fender
+  // const fireFrankieFender = fs.readFileSync('fire-frankie-fender.sql', 'utf-8');
+  // await db.exec(fireFrankieFender);
+
+  // Update for CASE section
+  // const caseUpdate = fs.readFileSync('case-update.sql', 'utf-8');
+  // await db.exec(caseUpdate);
 
   // Load the SQL query file
   const query = fs.readFileSync('query.sql', 'utf8');

@@ -31,8 +31,8 @@ import fs from 'fs';
   // await db.exec(fireFrankieFender);
 
   // Update for CASE section
-  // const caseUpdate = fs.readFileSync('case-update.sql', 'utf-8');
-  // await db.exec(caseUpdate);
+  const caseUpdate = fs.readFileSync('case-update.sql', 'utf-8');
+  await db.exec(caseUpdate);
 
   // Load the SQL query file
   const query = fs.readFileSync('query.sql', 'utf8');
